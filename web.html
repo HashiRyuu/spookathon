@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Starter Template — Web</title>
+    <meta name="description" content="A minimal, responsive HTML template to start a new web page." />
+
+    <!-- Basic styles (inline for a single-file template) -->
+    <style>
+        :root{
+            --bg:#f7f9fc;
+            --card:#ffffff;
+            --muted:#6b7280;
+            --accent:#2563eb;
+            --radius:12px;
+            --max:1100px;
+            --glass: rgba(255,255,255,0.6);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color-scheme: light;
+        }
+
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            background:linear-gradient(180deg,#eef2ff 0%,var(--bg) 40%);
+            color:#0f172a;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.45;
+        }
+
+        .wrap{
+            max-width:var(--max);
+            margin:36px auto;
+            padding:20px;
+        }
+
+        header.site-header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:16px;
+            margin-bottom:28px;
+        }
+
+        .brand{
+            display:flex;
+            gap:12px;
+            align-items:center;
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .logo{
+            width:48px;height:48px;
+            border-radius:10px;
+            background:linear-gradient(135deg,var(--accent),#7c3aed);
+            display:grid;
+            place-items:center;
+            color:white;
+            font-weight:700;
+            box-shadow:0 6px 18px rgba(37,99,235,0.18);
+            flex:0 0 48px;
+        }
+
+        nav.primary{
+            display:flex;
+            gap:12px;
+            align-items:center;
+        }
+
+        nav.primary a{
+            text-decoration:none;
+            color:var(--muted);
+            padding:8px 12px;
+            border-radius:8px;
+            transition:all .15s ease;
+            font-weight:600;
+            font-size:14px;
+        }
+
+        nav.primary a:hover{color:#0f172a;background:rgba(15,23,42,0.04)}
+
+        .cta{
+            background:var(--accent);
+            color:white;
+            padding:8px 14px;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:700;
+            box-shadow:0 6px 18px rgba(37,99,235,0.18);
+        }
+
+        /* Hero */
+        .hero{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:20px;
+            align-items:center;
+            margin-bottom:28px;
+        }
+
+        .hero-card{
+            padding:28px;
+            background:linear-gradient(180deg,rgba(255,255,255,0.6),var(--glass));
+            border-radius:var(--radius);
+            box-shadow:0 8px 30px rgba(2,6,23,0.06);
+            display:flex;
+            gap:24px;
+            align-items:center;
+        }
+
+        .hero .left{flex:1}
+        .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef2ff;color:var(--accent);font-weight:700;font-size:12px}
+        h1{margin:12px 0 8px;font-size:28px;line-height:1.05}
+        p.lead{margin:0;color:var(--muted)}
+
+        .hero .actions{margin-top:16px;display:flex;gap:12px}
+
+        /* Feature grid */
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:16px;
+            margin-top:18px;
+        }
+
+        .card{
+            background:var(--card);
+            border-radius:12px;
+            padding:18px;
+            box-shadow:0 6px 18px rgba(2,6,23,0.04);
+        }
+
+        .card h3{margin:0 0 8px;font-size:16px}
+        .card p{margin:0;color:var(--muted);font-size:14px}
+
+        /* Footer */
+        footer{margin-top:36px;padding-top:18px;border-top:1px solid rgba(2,6,23,0.04);color:var(--muted);font-size:13px}
+
+        /* Responsive */
+        @media (max-width:900px){
+            .grid{grid-template-columns:repeat(2,1fr)}
+            header.site-header{flex-direction:column;align-items:flex-start}
+            .hero-card{flex-direction:column;align-items:flex-start}
+        }
+        @media (max-width:600px){
+            .grid{grid-template-columns:1fr}
+            nav.primary{display:none}
+            .mobile-toggle{display:inline-flex}
+        }
+
+        .mobile-toggle{display:none;background:transparent;border:0;font-size:18px;padding:8px;border-radius:8px}
+    </style>
+</head>
+<body>
+    <div class="wrap" role="document">
+        <header class="site-header" role="banner">
+            <a class="brand" href="#" aria-label="Home">
+                <div class="logo">W</div>
+                <div>
+                    <div style="font-weight:800">Web Starter</div>
+                    <div style="font-size:12px;color:var(--muted)">A minimal HTML template</div>
+                </div>
+            </a>
+
+            <nav class="primary" role="navigation" aria-label="Main navigation">
+                <a href="#features">Features</a>
+                <a href="#examples">Examples</a>
+                <a href="#contact">Contact</a>
+                <a class="cta" href="#get-started">Get started</a>
+            </nav>
+
+            <button class="mobile-toggle" aria-expanded="false" aria-controls="mobile-nav" id="mobileToggle" title="Open menu">
+                ☰
+            </button>
+        </header>
+
+        <main role="main">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-card" role="region" aria-label="Introduction">
+                    <div class="left">
+                        <span class="kicker">Template</span>
+                        <h1 id="hero-title">A clean, responsive HTML starter</h1>
+                        <p class="lead">A minimal single-file template with accessible markup, responsive layout and a few useful components to kick off your project.</p>
+
+                        <div class="actions" role="group" aria-label="Primary actions">
+                            <a class="cta" href="#get-started">Get started</a>
+                            <a href="#learn">Learn more</a>
+                        </div>
+                    </div>
+
+                    <div class="right" style="min-width:160px">
+                        <!-- Decorative SVG illustration -->
+                        <svg width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+                            </defs>
+                            <rect width="160" height="120" rx="12" fill="url(#g)"/>
+                            <circle cx="40" cy="60" r="18" fill="rgba(255,255,255,0.28)"/>
+                            <rect x="80" y="30" width="60" height="18" rx="6" fill="rgba(255,255,255,0.22)"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="get-started" class="card" style="margin-top:6px">
+                    <strong>Ready to build?</strong>
+                    <p style="margin-top:6px;color:var(--muted)">Use this file as a base. Add your assets, adjust the layout, and replace placeholder content.</p>
+                </div>
+            </section>
+
+            <section id="features" aria-labelledby="features-title" style="margin-top:18px">
+                <h2 id="features-title" style="margin:0 0 12px">Key features</h2>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>Accessible</h3>
+                        <p>Semantic HTML with ARIA attributes where appropriate, and a focus on keyboard/navigation support.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Responsive</h3>
+                        <p>Mobile-first layout with simple breakpoints to adapt a grid and header for small screens.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Single-file</h3>
+                        <p>All styles and simple JS within this file so you can copy and iterate quickly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="examples" aria-labelledby="examples-title" style="margin-top:18px">
+                <h2 id="examples-title" style="margin:0 0 12px">Small components</h2>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>Card</h3>
+                        <p>Use .card to create elevated panels for content or controls.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Form</h3>
+                        <p>
+                            <form onsubmit="event.preventDefault()">
+                                <label style="display:block;margin-bottom:8px;font-weight:600">Subscribe</label>
+                                <input type="email" placeholder="you@example.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06)" />
+                                <div style="margin-top:8px">
+                                    <button type="submit" class="cta" style="background:var(--accent)">Subscribe</button>
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Footnotes</h3>
+                        <p style="color:var(--muted)">Small, reusable building blocks that fit into any project structure.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer role="contentinfo">
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+                <div>© <span id="year"></span> Web Starter</div>
+                <div style="color:var(--muted)">Built with a minimal template — customize as needed.</div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile nav (simple, unobtrusive) -->
+    <div id="mobile-nav" style="display:none;position:fixed;inset:72px 12px 12px 12px;padding:12px;background:var(--card);border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.12)">
+        <nav aria-label="Mobile navigation">
+            <a href="#features" style="display:block;padding:10px 8px;border-radius:8px;text-decoration:none;color:var(--muted)">Features</a>
+            <a href="#examples" style="display:block;padding:10px 8px;border-radius:8px;text-decoration:none;color:var(--muted)">Examples</a>
+            <a href="#contact" style="display:block;padding:10px 8px;border-radius:8px;text-decoration:none;color:var(--muted)">Contact</a>
+            <a href="#get-started" style="display:inline-block;margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none">Get started</a>
+        </nav>
+    </div>
+
+    <!-- Small script for interactivity -->
+    <script>
+        // Fill year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                const open = mobileNav.style.display !== 'none';
+                mobileNav.style.display = open ? 'none' : 'block';
+                mobileToggle.setAttribute('aria-expanded', String(!open));
+            });
+        }
+
+        // Close mobile nav on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                mobileNav.style.display = 'none';
+                mobileToggle?.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html></nav></div></section>

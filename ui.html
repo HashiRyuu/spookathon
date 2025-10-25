@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin: 0;
+      padding: 10px;
+    }
+    #chat {
+      flex: 1;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    .msg-user { color: #1a73e8; margin: 4px 0; }
+    .msg-ai { color: #0b8043; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <div id="chat"></div>
+  <div>
+    <input id="input" type="text" placeholder="Type your message..." style="width:80%">
+    <button id="send">Send</button>
+  </div>
+
+  <script>
+    const chat = document.getElementById("chat");
+    const input = document.getElementById("input");
+    const send = document.getElementById("send");
+
+    send.onclick = async () => {
+      const msg = input.value.trim();
+      if (!msg) return;
+      chat.innerHTML += `<div class="msg-user">You: ${msg}</div>`;
+      input.value = "";
+
+      parent.postMessage({ pluginMessage: { type: "chat", prompt: msg } }, "*");
+    };
+
+    onmessage = (event) => {
+      const { type, text } = event.data.pluginMessage;
+      if (type === "reply") {
+        chat.innerHTML += `<div class="msg-ai">AI: ${text}</div>`;
+      }
+    };
+  </script>
+</body>
+</html>
