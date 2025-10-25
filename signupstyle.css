@@ -1,25 +1,62 @@
-body {
-  background-color: lightblue;
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
+/* Container to center the signup box vertically & horizontally */
+.signup-container {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    height: 100%;
+    background-color: #f0f2f5;
+}
+
+/* Sign-up box styling */
 .signup-box {
-  width: 300px;
-  margin: 100px auto;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 350px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+/* Headings */
+.signup-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-button:hover {
-  background-color: #45a049;
+/* Labels above inputs */
+.signup-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input fields */
+.signup-box input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-box button:hover {
+    background-color: #45a049;
 }
