@@ -1,61 +1,70 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 
-.signin-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #f0f2f5;
+body{
+    background: url();
+    background-position: center;
+    background-size: cover;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .signin-box {
     width: 350px;
-    padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px 0 #000;
+    margin: 100px auto;
+    background-color:#fff;
+    padding: 50px 25px;
 }
-
-.signin-box h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.signin-box label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.signin-box input {
+input{
     width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    height: 40px;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid #999;
+    padding: 20px;
 }
-
-.signin-box button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+.input-group{
+    margin: 20px auto;
+    position: relative;
+}
+label{
+    position: absolute;
+    top:-7px;
+    left: 20px;
+    background: #fff;
+    padding: 0 5px;
+}
+button{
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    background: #ff1100;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+h2{
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 10px 0 #000;
+    margin: -70px auto 30px;
+    height: 40px;
+    padding-top: 16px;
+    border-radius: 30px;
+    background: #fff;
+}
+p{
+    text-align:center;
+    margin: 30px auto;
+
+}
+.social img{
+    width: 40px;
+    margin: 0 10px;
     cursor: pointer;
 }
-
-.signin-box button:hover {
-    background-color: #45a049;
-}
-
-.signin-box p {
+.social{
     text-align: center;
-    margin-top: 10px;
+}
+button:hover{
+    background: #000;
+    transition: 0.5;
 }
