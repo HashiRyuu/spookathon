@@ -30,16 +30,16 @@ body, html {
 
 /* Labels above inputs */
 .signup-box label {
-    display: block;
-    margin-bottom: 5px;
+    display: block;      /* makes label take a full line */
+    margin-bottom: 5px;  /* space below label */
     font-weight: bold;
+    text-align: left;    /* left-align text inside box */
 }
 
-/* Input fields */
 .signup-box input {
-    width: 100%;
+    width: 100%;          /* full width of box */
     padding: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 15px;  /* space below input */
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
